@@ -74,4 +74,31 @@ function check_list(list_of_files, to_path){
     return (true);
 }
 
-export { check_paths, check_errors, copyFolder, check_folders, renameFolder, check_list };
+function getFileName(path) {
+    let fileName;
+
+    // Проверяем, содержит ли строка слеш или обратный слеш
+    if (path.includes('/') || path.includes('\\')) {
+        // Разделяем путь на части по слешу или обратному слешу
+        let parts = path.split(/[/\\]/);
+        // Получаем имя файла
+        fileName = parts[parts.length - 1];
+    } else {
+        // Если разделители отсутствуют, вся строка является именем файла
+        fileName = path;
+    }
+
+    // Разделяем имя файла на имя и расширение
+    let fileNameParts = fileName.split('.');
+    // Если в имени файла есть точка и это не скрытый файл в Unix-подобных системах
+    if (fileNameParts.length > 1 && !(fileNameParts.length === 2 && fileNameParts[0] === '')) {
+        // Удаляем последний элемент массива (расширение файла)
+        fileNameParts.pop();
+        // Объединяем оставшиеся части обратно в строку
+        fileName = fileNameParts.join('.');
+    }
+
+    return fileName;
+}
+
+export { check_paths, check_errors, copyFolder, check_folders, renameFolder, check_list, getFileName };

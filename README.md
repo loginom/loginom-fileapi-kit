@@ -1,6 +1,6 @@
 # Loginom FileApi Kit
 
-* Версия: 1.0.2
+* Версия: 1.0.3
 * Проверено: Все редакции Loginom от 6.5.5
 
 Библиотека **Loginom FileApi Kit** поддерживается и развивается Loginom Company. В ней представлены простые и полезные компоненты для работы с файловой системой. В зависимости от версии, если версия десктопная, то с файловой системой ОС, если серверная, то работа производится с [Loginom FileStorage](https://help.loginom.ru/userguide/location_user_files.html).
@@ -40,7 +40,8 @@
 * [Создать папку](./docs/create-folder.md)
 * [Копировать список файлов](./docs/copy-files-list.md)
 * [Переместить список файлов](./docs/move-files-list.md)
-* [Архивировать папку](./docs/archive-folder.md)
+* [Архивировать папку (ZIP)](./docs/archive-folder.md)
+* [Распаковать ZIP архив](./docs/unpackage-zip.md)
 
 ## Прочее
 
